@@ -164,7 +164,6 @@ private:
 	double _workspace_y2;
 
     std::set<std::string> _skills;
-
 };
 
 
