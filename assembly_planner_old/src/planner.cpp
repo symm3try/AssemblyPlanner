@@ -18,7 +18,7 @@ algorithms::search::AStar* Planner::getAstar(){
 
 std::map<std::string, std::list<AssemblyAction> > Planner::calculateNominalSequence(std::set<std::string> currentSubassemblies){
 
-    ANDORgraph* graph=static_cast<Object_ANDORgraph*>(this->_memory->getMemory("andorgraph"))->_graph;
+    ANDORgraph* graph = static_cast< Object_ANDORgraph* >( this->_memory->getMemory("andorgraph") )->_graph;
     // get the pointers to the OR nodes of the current assembly status
     //    std::cout<<"listing current assemblies: "<<std::endl;
     std::set<Or_node*> currentOrNodes;
@@ -34,7 +34,7 @@ std::map<std::string, std::list<AssemblyAction> > Planner::calculateNominalSeque
 
     // conduct the search
     std::cout<<"astar: seaching...";
-    AndOrGraph_node* node = static_cast<AndOrGraph_node*>(this->_astar.search(&start,&goal));
+    AndOrGraph_node* node = static_cast< AndOrGraph_node* >( this->_astar.search(&start,&goal) );
     std::cout<<"done."<<std::endl;
 
     std::list<std::map<std::string,std::string> > actions_sequence;
